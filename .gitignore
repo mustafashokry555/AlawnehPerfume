@@ -1,0 +1,23 @@
+/node_modules
+/public/hot
+/public/storage
+/public/themes
+/storage/*.key
+/storage/app/*
+/vendor
+.vscode
+.idea
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+composer-setup.php
+.DS_Store
+storage_240702_192321.zip
+perfum13_6valley.sql
+App.zip
+admin_6valley.sql
+Admin and web new install V14.6 2.zip
