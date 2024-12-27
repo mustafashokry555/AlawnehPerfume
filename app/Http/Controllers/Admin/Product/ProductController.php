@@ -256,10 +256,10 @@ class ProductController extends BaseController
         ]);
     }
 
-    public function exportList(Request $request, string $type): BinaryFileResponse
+    public function exportList(Request $request, string $type)//: BinaryFileResponse
     {
         $filters = [
-            'added_by' => $type,
+            // 'added_by' => $type,
             'request_status' => $request['status'],
             'seller_id' => $request['seller_id'],
             'brand_id' => $request['brand_id'],
@@ -269,7 +269,6 @@ class ProductController extends BaseController
         ];
 
         $products = $this->productRepo->getListWhere(orderBy: ['id' => 'desc'], searchValue: $request['searchValue'], filters: $filters, relations: ['translations'], dataLimit: 'all');
-
         //export from product
         $category = (!empty($request['category_id']) && $request->has('category_id')) ? $this->categoryRepo->getFirstWhere(params: ['id' => $request['category_id']]) : 'all';
         $subCategory = (!empty($request->sub_category_id) && $request->has('sub_category_id')) ? $this->categoryRepo->getFirstWhere(params: ['id' => $request['sub_category_id']]) : 'all';
