@@ -19,7 +19,7 @@ class AdminService implements AdminServiceInterface
 
     public function logout(): void
     {
-        auth()->guard('web')->logout();
+        auth()->guard('admin')->logout();
         session()->invalidate();
     }
 
